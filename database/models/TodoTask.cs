@@ -1,9 +1,10 @@
-using TaskManager.Models.Utilities;
+using TaskManager.Database.Models.Utilities;
 
-namespace TaskManager.Models
+namespace TaskManager.Database.Models
 {
-    public class Task
+    public class TodoTask
     {
+        public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public DateTime StartDate { get; private set; }
@@ -29,9 +30,12 @@ namespace TaskManager.Models
         public bool IsCompleted { get; private set; }
         public Priority Priority { get; set; }
         public Difficulty Difficulty { get; set; }
+        public int AssigneeId { get; set; }
         public Person Assignee { get; set; }
 
-        public Task(string title, string description, DateTime startDate, DateTime dueDate, Priority priority,
+        public TodoTask() {}
+
+        public TodoTask(string title, string description, DateTime startDate, DateTime dueDate, Priority priority,
                     Difficulty difficulty, Person assignee)
         {
             if (dueDate < startDate)
