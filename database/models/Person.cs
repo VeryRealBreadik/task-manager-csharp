@@ -9,14 +9,14 @@ namespace TaskManager.Database.Models
 
         public Person()
         {
-            AssignedTasks = new List<TodoTask>();
+            AssignedTasks = [];
         }
 
         public Person(string firstName, string lastName)
         {
             FirstName = firstName;
             LastName = lastName;
-            AssignedTasks = new List<TodoTask>();
+            AssignedTasks = [];
         }
 
         public override string ToString()
